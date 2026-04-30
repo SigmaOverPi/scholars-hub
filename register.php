@@ -66,8 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $pageTitle = 'Register';
 require __DIR__ . '/includes/layout_header.php';
 ?>
-<h1>Create an account</h1>
-<p class="lede">Your year group is fixed at registration and controls which study sessions you see. Major is stored for your profile only; session listings are by year group.</p>
+<h1 style="text-align: center;">Create an account</h1>
+<p style="text-align: center;" class="lede">Your year group is fixed at registration and controls which study sessions you see. Major is stored for your profile only; session listings are by year group.</p>
 <?php if ($error !== ''): ?>
     <p class="msg msg-error"><?= h($error) ?></p>
 <?php endif; ?>
@@ -85,7 +85,7 @@ require __DIR__ . '/includes/layout_header.php';
 
     <label for="year_group">Year group</label>
     <select id="year_group" name="year_group" required>
-        <option value="" disabled <?= !isset($_POST['year_group']) ? 'selected' : '' ?>>Select year</option>
+        <option style="text-align: center;" value="" disabled <?= !isset($_POST['year_group']) ? 'selected' : '' ?>>Select year</option>
         <?php foreach (YEAR_GROUP_VALUES as $y): ?>
             <option value="<?= $y ?>" <?= (isset($_POST['year_group']) && (int) $_POST['year_group'] === $y) ? 'selected' : '' ?>><?= $y ?></option>
         <?php endforeach; ?>
@@ -93,7 +93,7 @@ require __DIR__ . '/includes/layout_header.php';
 
     <label for="major">Major</label>
     <select id="major" name="major" required>
-        <option value="" disabled <?= !isset($_POST['major']) ? 'selected' : '' ?>>Select major</option>
+        <option style="text-align: center;" value="" disabled <?= !isset($_POST['major']) ? 'selected' : '' ?>>Select major</option>
         <?php foreach (MAJOR_VALUES as $m): ?>
             <option value="<?= h($m) ?>" <?= (isset($_POST['major']) && $_POST['major'] === $m) ? 'selected' : '' ?>><?= h($m) ?></option>
         <?php endforeach; ?>
@@ -101,7 +101,7 @@ require __DIR__ . '/includes/layout_header.php';
 
     <button type="submit">Register</button>
 </form>
-<p><a href="login.php">Already have an account? Log in</a></p>
+<p style="text-align: center;"><a href="login.php">Already have an account? Log in</a></p>
 <script>
 (function () {
     var form = document.querySelector("form.form-card");

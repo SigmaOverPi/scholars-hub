@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $pageTitle = 'Log in';
 require __DIR__ . '/includes/layout_header.php';
 ?>
-<h1>Log in</h1>
+<h1 style="text-align: center;">Log in</h1>
 <?php if ($error !== ''): ?>
     <p class="msg msg-error"><?= h($error) ?></p>
 <?php endif; ?>
@@ -63,5 +63,5 @@ require __DIR__ . '/includes/layout_header.php';
 
     <button type="submit">Log in</button>
 </form>
-<p><a href="register.php">Need an account? Register</a></p>
+<p style="text-align: center;"><a href="register.php">Need an account? Register</a></p>
 <?php require __DIR__ . '/includes/layout_footer.php'; ?>
